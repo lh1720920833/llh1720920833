@@ -30,7 +30,7 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                Intent intent = new Intent(SplashActivity.this, AdActivity.class);
+                Intent intent = new Intent(SplashActivity.this, AdymActivity.class);
                 startActivity(intent);
                 finish();
 

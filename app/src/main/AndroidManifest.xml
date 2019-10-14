@@ -16,10 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragment.NavigationFragment" />
-        <activity android:name=".fragment.HomeFragment" />
+        <activity android:name=".activity.AdymActivity"/>
         <activity android:name=".activity.MainActivity" />
-        <activity android:name=".activity.AdActivity"></activity>
     </application>
 
 </manifest>
