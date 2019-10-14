@@ -16,6 +16,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+
         View loadingView = findViewById(R.id.iv_loading);
 
         Animation animation = AnimationUtils.loadAnimation(SplashActivity.this, R.anim.splash_loading);
@@ -29,7 +30,7 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                Intent intent = new Intent(SplashActivity.this, AdActivity.class);
                 startActivity(intent);
                 finish();
 
