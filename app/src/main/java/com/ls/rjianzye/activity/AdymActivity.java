@@ -15,6 +15,7 @@ public class AdymActivity extends AppCompatActivity {
     TextView tv_ad;
 
     Handler handler = new Handler();
+    boolean isStop;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,13 +23,29 @@ public class AdymActivity extends AppCompatActivity {
 
         tv_ad=findViewById(R.id.tv_ad);
 
+        tv_ad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isStop=true;
+                Intent intent3 = new Intent(AdymActivity.this,MainActivity.class);
+                startActivity(intent3);
+                finish();
 
+            }
+        });
+
+        isStop=false;
         new Thread(new Runnable() {
             @Override
             public void run() {
                 int i;
                 for (i = 5; i >= 0; i--) {
+
+                    if(isStop){
+                        return;
+                    }
                     SystemClock.sleep(1000);
+
                     final int count = i;
                     handler.post(new Runnable() {
                         @Override
