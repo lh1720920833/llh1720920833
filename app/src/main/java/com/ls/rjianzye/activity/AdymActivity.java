@@ -11,7 +11,11 @@ import android.widget.TextView;
 
 import com.ls.rjianzye.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class AdymActivity extends AppCompatActivity {
+    @BindView(R.id.tv_ad)
     TextView tv_ad;
 
     Handler handler = new Handler();
@@ -20,8 +24,8 @@ public class AdymActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adym);
+        ButterKnife.bind(this);
 
-        tv_ad=findViewById(R.id.tv_ad);
 
         tv_ad.setOnClickListener(new View.OnClickListener() {
             @Override

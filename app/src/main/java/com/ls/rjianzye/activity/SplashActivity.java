@@ -6,8 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 
 import com.ls.rjianzye.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -15,6 +19,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
 
 
         View loadingView = findViewById(R.id.iv_loading);
