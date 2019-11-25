@@ -7,8 +7,10 @@ import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.ls.rjianzye.R;
 
 import butterknife.BindView;
@@ -17,6 +19,8 @@ import butterknife.ButterKnife;
 public class AdymActivity extends AppCompatActivity {
     @BindView(R.id.tv_ad)
     TextView tv_ad;
+    @BindView(R.id.iv_image)
+    ImageView imageView;
 
     Handler handler = new Handler();
     boolean isStop;
@@ -25,6 +29,12 @@ public class AdymActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adym);
         ButterKnife.bind(this);
+
+        Glide.with(AdymActivity.this)
+                .load("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574701032688&di=8ab8c1ef0d3300441bfc805b50d55cb7&imgtype=0&src=http%3A%2F%2Fpic69.nipic.com%2Ffile%2F20150604%2F20892559_094412969472_2.jpg")
+                .placeholder(R.mipmap.zhanweitu)
+                .error(R.mipmap.error)
+                .into(imageView);
 
 
         tv_ad.setOnClickListener(new View.OnClickListener() {
